@@ -3,7 +3,7 @@ import sys
 import re
 
 def run_main_file():
-    python_cmd = "python" if sys.version_info.major == 2 else "python3"
+    python_cmd = "python" 
     
     process = subprocess.Popen([python_cmd, "main.py"], stdout=subprocess.PIPE)
     output, error = process.communicate()
@@ -31,7 +31,7 @@ def test_affichage_taille():
 
 def test_affichage_est_etudiant():
     output = run_main_file()
-    regex_pattern = r"[Ee]st\s?étudiant\s?:\s?(True|False)"
+    regex_pattern = r"[Ee]st\s?etudiant\s?:\s?(True|False)"
     match = re.search(regex_pattern, output)
     assert match is not None, "Le motif 'Est étudiant: [Est etudiant en booléen]' n'a pas été trouvé dans la console output."
 
