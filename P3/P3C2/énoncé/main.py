@@ -1,6 +1,8 @@
 # Écrivez votre code ici !
 from bs4 import BeautifulSoup
 
+# on aurait pu ne pas mettre le 'r' car c'est le mode par défaut
+# on ne doit pas close() le fichier car le with s'en charge
 with open("index.html", 'r') as file:
     soup = BeautifulSoup(file, 'html.parser')
 
